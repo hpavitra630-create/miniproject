@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Customer Churn System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="center-wrapper">
+  <div class="glass-card">
+    <h2>Customer Churn System</h2>
+    <p class="subtitle">Predicting Customer Churn</p>
+    <div id="msg" class="msg error"></div>
+
+    <label>Username</label>
+    <input id="u" type="text" placeholder="Enter username">
+
+    <label>Password</label>
+    <input id="p" type="password" placeholder="Enter password">
+
+    <button onclick="login()">Login</button>
+    <p style="margin-top:14px;font-size:13px;color:rgba(255,255,255,0.9);">
+      No account? <a href="register.html">Register here</a>
+    </p>
+  </div>
+</div>
+<script src="auth.js"></script>
+</body>
+</html>

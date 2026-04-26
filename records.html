@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Records - Customer Churn System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout-root">
+
+  <div class="sidebar">
+    <div>
+      <div class="sidebar-header">
+        <div class="logo-circle">C</div>
+        <div>
+          <div class="logo-text">Churn Tracker</div>
+          <div class="logo-sub">Predicting Customer Churn</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="dashboard.html" class="nav-link" id="nav-dashboard"><span class="icon">📋</span><span>Dashboard</span></a>
+        <a href="chart.html" class="nav-link" id="nav-chart"><span class="icon">🍩</span><span>Pie Chart</span></a>
+        <a href="records.html" class="nav-link" id="nav-records"><span class="icon">📁</span><span>Records</span></a>
+      </div>
+    </div>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <main class="main-content">
+    <div class="glass-panel">
+      <h2>Stored Churn Records</h2>
+      <p class="subtitle">All saved churn periods in this browser.</p>
+
+      <div class="table-wrapper">
+        <div class="records-controls">
+          <div>
+            <label for="filterSelect" style="margin-top:0;font-size:12px;">Filter</label>
+            <select id="filterSelect">
+              <option value="all">All records</option>
+              <option value="last5">Last 5 records</option>
+              <option value="high">Highest churn first</option>
+            </select>
+          </div>
+          <div>
+            <button id="exportBtn" class="small secondary">Export CSV</button>
+            <button id="resetBtn" class="small">Reset All</button>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Start</th>
+              <th>Acquired</th>
+              <th>Lost</th>
+              <th>Churn %</th>
+              <th>Notes</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+            </tr>
+          </thead>
+          <tbody id="recordsBody2">
+            <tr><td colspan="8">No records yet. Go to Dashboard and save one.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="auth.js"></script>
+<script src="main.js"></script>
+<script>
+  setActiveNav('records');
+  requireLogin();
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - Customer Churn System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="center-wrapper">
+  <div class="glass-card">
+    <h2>Create Account</h2>
+    <p class="subtitle">Local demo user stored in this browser.</p>
+    <div id="msg" class="msg error"></div>
+
+    <label>Username</label>
+    <input id="u" type="text" placeholder="Choose username">
+
+    <label>Password</label>
+    <input id="p" type="password" placeholder="Choose password">
+
+    <button onclick="registerUser()">Register</button>
+    <p style="margin-top:14px;font-size:13px;color:rgba(255,255,255,0.9);">
+      Already have an account? <a href="login.html">Back to login</a>
+    </p>
+  </div>
+</div>
+<script src="auth.js"></script>
+</body>
+</html>

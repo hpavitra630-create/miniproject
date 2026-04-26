@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Customer Churn System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout-root">
+
+  <div class="sidebar">
+    <div>
+      <div class="sidebar-header">
+        <div class="logo-circle">C</div>
+        <div>
+          <div class="logo-text">Churn Tracker</div>
+          <div class="logo-sub">Predicting Customer Churn</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="dashboard.html" class="nav-link" id="nav-dashboard"><span class="icon">📋</span><span>Dashboard</span></a>
+        <a href="chart.html" class="nav-link" id="nav-chart"><span class="icon">🍩</span><span>Pie Chart</span></a>
+        <a href="records.html" class="nav-link" id="nav-records"><span class="icon">📁</span><span>Records</span></a>
+      </div>
+    </div>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <main class="main-content">
+    <div class="glass-panel">
+      <h2>Customer Churn Input</h2>
+      <p class="subtitle">Enter customer base values and compute churn rate for a period.</p>
+
+      <div class="field-row">
+        <div class="field-label">Customers at Start</div>
+        <div class="field-input"><input id="start" type="number" min="0" value="0"></div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Customers Acquired</div>
+        <div class="field-input"><input id="acquired" type="number" min="0" value="0"></div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Customers Lost</div>
+        <div class="field-input"><input id="lost" type="number" min="0" value="0"></div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Period Start (YYYY-MM-DD)</div>
+        <div class="field-input"><input id="ps" type="date"></div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Period End (YYYY-MM-DD)</div>
+        <div class="field-input"><input id="pe" type="date"></div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-label">Notes</div>
+        <div class="field-input">
+          <textarea id="note" placeholder="Ex: October promo, 10% discount, etc."></textarea>
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="calcBtn">Calculate &amp; Save</button>
+        <button id="clearBtn" class="secondary">Clear</button>
+      </div>
+
+      <div id="churnMsg" class="msg"></div>
+    </div>
+  </main>
+</div>
+<script src="auth.js"></script>
+<script src="main.js"></script>
+<script>
+  setActiveNav('dashboard');
+  requireLogin();
+</script>
+</body>
+</html>
